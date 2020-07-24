@@ -23,6 +23,6 @@ while true
 do
 dnssrv
 IFS=''
-echo $IPS > $DISCOVER_FILE
+echo $IPS > /usr/share/elasticsearch/config/discovery-file/unicast_hosts.txt
 sleep 30
 done
