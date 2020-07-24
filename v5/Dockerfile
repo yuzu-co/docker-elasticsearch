@@ -12,8 +12,9 @@ DISCOVER_FILE=/usr/share/elasticsearch/config/discovery-file/unicast_hosts.txt
 
 ADD https://github.com/krallin/tini/releases/download/v0.10.0/tini /tini
 RUN export DEBIAN_FRONTEND=noninteractive \
+&& rm /etc/apt/sources.list.d/jessie-backports.list \
 && apt-get update \
-&& apt-get install -y --no-install-recommends runit dnsutils \
+&& apt-get install -y runit dnsutils \
 && rm -rf /var/lib/apt/lists/* \
 && chmod +x /tini
 
